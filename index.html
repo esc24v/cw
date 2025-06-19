@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charity: Water - Turn Passion Into Clean Water</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Link to your external custom CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="bg-white shadow-lg py-5">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <div class="text-2xl font-bold text-gray-800">
+                <!-- Logo using your uploaded file -->
+                <img src="img/logo.png" alt="Charity Water Logo" class="h-12 rounded-md">
+            </div>
+            <nav>
+                <ul class="flex space-x-8">
+                    <li><a href="#" class="text-gray-700 hover:text-blue-600 font-medium text-lg transition duration-300">Home</a></li>
+                    <li><a href="#" class="text-gray-700 hover:text-blue-600 font-medium text-lg transition duration-300">About</a></li>
+                    <li><a href="#" class="text-gray-700 hover:text-blue-600 font-medium text-lg transition duration-300">Projects</a></li>
+                    <li><a href="#" class="text-gray-700 hover:text-blue-600 font-medium text-lg transition duration-300">Donate</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-8">
+                Turn Passion Into Clean Water
+            </h1>
+            <p class="text-xl md:text-2xl lg:text-3xl font-light mb-10 max-w-2xl mx-auto">
+                Empower lives and protect the planet, one drop at a time. Join us to transform stories into hope and sustainability.
+            </p>
+            <a href="#" class="btn-primary inline-block">Learn More & Donate</a>
+        </div>
+    </section>
+
+    <!-- About Section - Value Proposition -->
+    <section class="py-20 section-blue text-center">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl md:text-5xl font-bold mb-8">Our Impact: A Treasure of Hope</h2>
+            <p class="text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed">
+                "Every time someone drinks clean water for the first time, it will transform their story into a treasure of hope and possibility. With your support, we can help make a difference from survival to sustainability."
+            </p>
+        </div>
+    </section>
+
+    <!-- Imagery Section - Stories of Transformation -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl md:text-5xl font-bold text-center text-gray-800 mb-16">Witness the Transformation</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+                <!-- Lifestyle Image 1 -->
+                <div class="image-card">
+                    <img src="img/lifestyle1.jpg" alt="Joyful community receiving clean water" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-3">New Beginnings</h3>
+                        <p class="text-gray-700">See the immediate joy and health that clean water brings to families. A simple act, a profound change.</p>
+                    </div>
+                </div>
+                <!-- Lifestyle Image 2 -->
+                <div class="image-card">
+                    <img src="img/lifestyle2.jpg" alt="Women and children carrying water" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-3">Pathways to Progress</h3>
+                        <p class="text-gray-700">Reducing the burden of water collection empowers communities, opening doors to education and economic growth.</p>
+                    </div>
+                </div>
+                <!-- Lifestyle Image 3 -->
+                <div class="image-card">
+                    <img src="img/lifestyle3.jpg" alt="Children playing in clean water" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-3">Healthy Generations</h3>
+                        <p class="text-gray-700">Clean water ensures children can thrive, learn, and play, building a stronger foundation for their future.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gemini API Integration: Generate Impact Story -->
+    <section class="py-20 gemini-section">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-10">✨ Generate Your Own Impact Story ✨</h2>
+            <p class="text-center max-w-2xl mx-auto mb-10 text-xl text-gray-700">
+                Curious about the power of clean water? Describe a scenario, and our AI will craft a short, inspiring impact story for you.
+            </p>
+            <div class="max-w-xl mx-auto bg-white p-10 rounded-lg shadow-xl">
+                <textarea id="story-prompt" class="gemini-textarea w-full p-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 mb-6" placeholder="e.g., A family gaining access to a new well after years of walking for water, or a school opening its doors with clean water for the first time."></textarea>
+                <button id="generate-story-btn" class="btn-primary w-full text-xl">
+                    Generate Story
+                </button>
+                <div id="loading-indicator" class="mt-8 text-center text-gray-600 text-xl hidden">
+                    Generating story... please wait. <span class="animate-pulse">💧</span>
+                </div>
+                <div id="story-output" class="story-output-box mt-8 p-8 rounded-md border text-left hidden">
+                    <!-- Generated story will appear here -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="py-24 section-green text-center">
+        <div class="container mx-auto px-4">
+            <h2 class="text-5xl md:text-6xl font-extrabold mb-10 leading-tight">Your Action Can Change Lives Today</h2>
+            <p class="text-2xl md:text-3xl max-w-4xl mx-auto mb-12 font-light">
+                Every contribution, no matter the size, makes a tangible difference. Join our global community committed to bringing safe, clean water to those who need it most.
+            </p>
+            <a href="#" class="btn-primary inline-block text-xl bg-white text-green-700 btn-green-cta">
+                Donate Now
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-800 text-white py-10">
+        <div class="container mx-auto px-4 text-center text-gray-400">
+            <p class="mb-4 text-lg">&copy; 2025 Charity: Water. All rights reserved.</p>
+            <div class="flex justify-center space-x-8 mt-4 text-lg">
+                <a href="#" class="hover:text-white transition duration-300">Privacy Policy</a>
+                <a href="#" class="hover:text-white transition duration-300">Terms of Service</a>
+                <a href="#" class="hover:text-white transition duration-300">Contact Us</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Get references to DOM elements
+        const storyPromptInput = document.getElementById('story-prompt');
+        const generateStoryBtn = document.getElementById('generate-story-btn');
+        const storyOutputDiv = document.getElementById('story-output');
+        const loadingIndicator = document.getElementById('loading-indicator');
+
+        // Add event listener to the generate button
+        generateStoryBtn.addEventListener('click', async () => {
+            const prompt = storyPromptInput.value.trim();
+
+            if (!prompt) {
+                storyOutputDiv.textContent = 'Please enter a description for the story.';
+                storyOutputDiv.classList.remove('hidden');
+                storyOutputDiv.classList.add('story-error-box');
+                storyOutputDiv.classList.remove('story-output-box');
+                return;
+            }
+
+            // Show loading indicator and hide previous output
+            loadingIndicator.classList.remove('hidden');
+            storyOutputDiv.classList.add('hidden');
+            storyOutputDiv.textContent = ''; // Clear previous content
+            storyOutputDiv.classList.remove('story-error-box'); // Remove error styling if present
+            storyOutputDiv.classList.add('story-output-box'); // Ensure default styling
+
+            try {
+                // Construct the chat history for the LLM request
+                let chatHistory = [];
+                chatHistory.push({ role: "user", parts: [{ text: `Generate a concise, compelling, and positive impact story (around 100-150 words) about clean water access. Base the story on this scenario: "${prompt}". Focus on hope, transformation, dignity, and the long-term benefits for individuals and the community, in an inspiring and professional tone suitable for a charity website.` }] });
+
+                // Define the payload for the Gemini API call
+                const payload = { contents: chatHistory };
+                const apiKey = ""; // API key is provided by the environment
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+
+                // Make the API call to Gemini
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                // Check if the response was successful
+                if (!response.ok) {
+                    const errorData = await response.json();
+                    throw new Error(`API error: ${response.status} ${response.statusText} - ${errorData.error.message || 'Unknown error'}`);
+                }
+
+                const result = await response.json();
+
+                // Process the result from the LLM
+                if (result.candidates && result.candidates.length > 0 &&
+                    result.candidates[0].content && result.candidates[0].content.parts &&
+                    result.candidates[0].content.parts.length > 0) {
+                    const generatedText = result.candidates[0].content.parts[0].text;
+                    storyOutputDiv.textContent = generatedText;
+                    storyOutputDiv.classList.remove('hidden');
+                } else {
+                    storyOutputDiv.textContent = 'Could not generate a story. Please try again with a different prompt or check your internet connection.';
+                    storyOutputDiv.classList.remove('hidden');
+                    storyOutputDiv.classList.add('story-error-box');
+                    storyOutputDiv.classList.remove('story-output-box');
+                }
+
+            } catch (error) {
+                console.error('Error generating story:', error);
+                storyOutputDiv.textContent = `An error occurred: ${error.message}. Please try again later.`;
+                storyOutputDiv.classList.remove('hidden');
+                storyOutputDiv.classList.add('story-error-box');
+                storyOutputDiv.classList.remove('story-output-box');
+            } finally {
+                // Hide loading indicator
+                loadingIndicator.classList.add('hidden');
+            }
+        });
+    </script>
+
+</body>
+</html>
