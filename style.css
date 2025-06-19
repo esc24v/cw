@@ -1,0 +1,222 @@
+/* Custom CSS to define specific colors based on the brand visuals and refine design */
+:root {
+    --color-blue: #2e9df7; /* Updated vibrant blue for action and freshness */
+    --color-yellow: #ffc907; /* Updated bright yellow for optimism and energy */
+    --color-green: #159a48; /* Updated deep green for sustainability and growth */
+    --color-background-light-blue: #AFE2DD; /* The lighter blue-green background from the palette */
+    --color-text-dark: #333333; /* Darker text for readability on light backgrounds */
+    --color-text-light: #ffffff; /* Light text for readability on dark backgrounds */
+    --color-button-hover-blue: #2183d0; /* Slightly darker blue for button hover */
+    --color-button-hover-green: #107e3a; /* Slightly darker green for button hover */
+}
+
+body {
+    font-family: "Inter", sans-serif; /* Using Inter as the default font, close to Proxima Nova's modern feel */
+    background-color: #f0f0f0; /* Light grey background for the whole page */
+    line-height: 1.6;
+    color: var(--color-text-dark); /* Default text color for body */
+}
+
+/* Hero section specific styles to make the headline stand out */
+.hero-section {
+    /* Using the chosen hero image for a powerful visual */
+    background-image: url('img/Nepal_2022_CG-0683.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 90vh; /* Increased height for more visual impact */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    /* Dark overlay integrated with background for text readability and mood */
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.5);
+    color: var(--color-text-light); /* White text on dark background */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2; /* Ensure content is above the overlay */
+    max-width: 900px;
+    padding: 2rem; /* Increased padding for more breathing room */
+    border-radius: 1rem; /* More rounded corners for a softer feel */
+    /* Using a subtle background for text readability, blending with the image */
+    background-color: rgba(0,0,0,0.25); /* Slightly darker background for better contrast */
+    backdrop-filter: blur(3px); /* Slightly more blur for emphasis */
+    box-shadow: 0 8px 30px rgba(0,0,0,0.3); /* Enhanced shadow for depth */
+    animation: fadeIn 1.5s ease-out forwards; /* Fade-in animation for hero content */
+    opacity: 0; /* Start invisible for animation */
+}
+
+/* Keyframe animation for hero content fade-in */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Call to Action Button Styling to make it stand out */
+.btn-primary {
+    background-color: var(--color-blue);
+    color: var(--color-text-light);
+    padding: 1rem 2.5rem; /* Increased padding for a more prominent button */
+    border-radius: 0.75rem;
+    font-weight: 700;
+    font-size: 1.25rem; /* Larger font size for prominence */
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Stronger shadow for pop */
+    text-transform: uppercase;
+    letter-spacing: 0.08em; /* Increased letter spacing for impact */
+    display: inline-flex; /* Use flex to center text if needed, good for icons too */
+    align-items: center;
+    justify-content: center;
+    border: 2px solid transparent; /* Subtle border for definition */
+}
+
+.btn-primary:hover {
+    background-color: var(--color-button-hover-blue); /* Darker blue on hover */
+    transform: translateY(-3px); /* More pronounced lift effect */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25); /* More intense shadow on hover */
+    border-color: rgba(255,255,255,0.5); /* White border on hover */
+}
+
+.btn-primary:active {
+    transform: translateY(0); /* Press down effect */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Specific styling for the green CTA button */
+.btn-green-cta {
+    background-color: var(--color-green);
+    color: var(--color-text-light);
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    border: 2px solid transparent;
+}
+
+.btn-green-cta:hover {
+    background-color: var(--color-button-hover-green);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+    border-color: rgba(255,255,255,0.5);
+}
+.btn-green-cta:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Section backgrounds based on brand colors */
+.section-blue {
+    background-color: var(--color-blue);
+    color: var(--color-text-light);
+    padding: 5rem 0; /* Increased padding */
+}
+
+.section-yellow {
+    background-color: var(--color-yellow);
+    color: var(--color-text-dark);
+    padding: 5rem 0; /* Increased padding */
+}
+
+.section-green {
+    background-color: var(--color-green);
+    color: var(--color-text-light);
+    padding: 6rem 0; /* Increased padding for the main CTA section */
+}
+
+/* Custom styles for the Gemini API feature */
+.gemini-section {
+    background-color: var(--color-background-light-blue); /* Using the light blue from your palette */
+    color: var(--color-text-dark);
+    padding: 5rem 0; /* Increased padding */
+}
+.gemini-textarea {
+    min-height: 150px; /* Taller textarea */
+    resize: vertical;
+    font-size: 1.15rem; /* Slightly larger font */
+    padding: 1.25rem; /* More padding */
+    border-radius: 0.75rem; /* More rounded */
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1); /* Inner shadow for depth */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.gemini-textarea:focus {
+    border-color: var(--color-blue);
+    box-shadow: 0 0 0 3px rgba(46, 157, 247, 0.3); /* Blue glow on focus */
+}
+
+.story-output-box {
+    background-color: #f0f9ff; /* Light blue for output box */
+    border-color: #bfdbfe; /* Blue border for output box */
+    color: var(--color-text-dark);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* Stronger shadow */
+    line-height: 1.8; /* Increased line height for readability */
+    font-size: 1.05rem; /* Slightly larger font for readability */
+    animation: slideInUp 0.6s ease-out forwards; /* Animation for story output */
+}
+.story-error-box {
+     background-color: #fee2e2; /* Light red for error */
+     border-color: #ef4444; /* Red border */
+     box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+/* Animation for story output */
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* General heading styles for consistency and visual hierarchy */
+h1, h2, h3 {
+    font-weight: 800; /* Extra bold for headings */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1); /* Subtle text shadow for headings */
+}
+h2 {
+    margin-bottom: 1.5rem; /* More space below section headings */
+}
+
+/* Image card enhancements */
+.image-card {
+    background-color: white; /* White background for cards */
+    border-radius: 1rem; /* More rounded corners */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Soft shadow */
+    overflow: hidden;
+    transform: scale(1); /* Ensure initial scale is 1 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.image-card:hover {
+    transform: translateY(-5px); /* Lift effect */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15); /* Enhanced shadow on hover */
+}
+.image-card img {
+    border-radius: 1rem 1rem 0 0; /* Apply rounded corners only to top of image */
+}
+.image-card .p-6 {
+    padding: 1.5rem; /* More padding inside cards */
+}
+
+/* Footer specific styling */
+footer {
+    background-color: #2c3e50; /* A darker grey for the footer */
+    color: #ecf0f1; /* Light text for footer */
+    padding: 3rem 0; /* More padding */
+}
+footer a {
+    color: #bdc3c7; /* Lighter link color */
+    transition: color 0.3s ease;
+}
+footer a:hover {
+    color: #ffffff; /* White on hover */
+    text-decoration: underline;
+}
