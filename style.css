@@ -11,7 +11,7 @@
 }
 
 body {
-    font-family: "Inter", sans-serif; /* Using Inter as the default font, close to Proxima Nova's modern feel */
+    font-family: "Proxima Nova", "Inter", Arial, Helvetica, sans-serif; /* Use Proxima Nova, fallback to Inter */
     background-color: #f0f0f0; /* Light grey background for the whole page */
     line-height: 1.6;
     color: var(--color-text-dark); /* Default text color for body */
